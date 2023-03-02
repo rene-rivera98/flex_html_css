@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Flexzone</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <!-- BODY -->
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">ADMINISTRADOR</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Datos del perfil</a></li>
+                        <li><a class="dropdown-item" href="#!">Bitacora</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- FIN BARRA DE NAVEGACION -->
+        <!-- MODAL MODIFICAR -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+      
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Modificar usuario</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+      
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <div class="input-group">
+                    <span style="margin-bottom: 2%;">#ID USUARIO</span>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Apellido Paterno" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Apellido Materno" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="tel" class="form-control" placeholder="Celular" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Email" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="date" class="form-control" placeholder="Fecha de nacimiento" style="margin-bottom: 2%;">
+                  </div>
+                  <select class="input-group" style="height: 25pt;">
+                    <option class="form-control"value="" selected disabled>Selecciona un tipo...</option>
+                    <option class="form-control"value="Administrador">Administrador</option>
+                    <option class="form-control" value="Vendedor">Vendedor</option>
+                    <option class="form-control" value="Almacen">Almacen</option>
+                  </select>
+                </div>
+      
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+          <!-- FIN MODAL MODIFICAR -->
+          
+        <!-- MODAL ELIMINAR -->
+        <div class="modal fade" id="myModalE">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+      
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">¿Seguro desea eliminar este usuario?</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+      
+                <!-- Modal footer -->
+                <div class="modal-footer" style="justify-content:center;">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <!-- FIN MODAL ELIMINAR -->
+
+          <!-- MODAL AGREGAR -->
+        <div class="modal fade" id="myModalA">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+      
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Crear usuario</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+      
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Apellido Paterno" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Apellido Materno" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="tel" class="form-control" placeholder="Celular" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Email" style="margin-bottom: 2%;">
+                  </div>
+                  <div class="input-group">
+                    <input type="date" class="form-control" placeholder="Fecha de nacimiento" style="margin-bottom: 2%;">
+                  </div>
+                  <select class="input-group" style="height: 25pt;">
+                    <option class="form-control"value="" selected disabled>Selecciona un tipo...</option>
+                    <option class="form-control"value="Administrador">Administrador</option>
+                    <option class="form-control" value="Vendedor">Vendedor</option>
+                    <option class="form-control" value="Almacen">Almacen</option>
+                  </select>
+                </div>
+      
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+          <!-- FIN MODAL AGREGAR -->
+        <!-- INICIO SIDEBAR -->
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link collapsed" href="index.html" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-data-fill.svg"></div>
+                                Reportes
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#">Productos</a>
+                                    <a class="nav-link" href="#">Analisis</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="users.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                Usuarios
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/box-seam-fill.svg"></div>
+                                Almacen
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Cafeteria</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">FrontDesk</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Inventario
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                    Facturas
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Caja
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Usuario logueado:</div>
+                        
+                        <span id="#username">#nombre usuario</span> 
+                    </div>
+                </nav>
+            </div>
+            <!-- FIN PLANTILLA -->
+            <!-- contenido -->
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tabla: Usuarios Registrados</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item active">Usuarios</li>
+                        </ol>
+                      
+                        <!-- TABLA -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Agregar <img src="/node_modules/bootstrap-icons/icons/person-fill-add.svg"></button>
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Tipo</th>
+                                            <th>Celular</th>
+                                            <th>Email</th>
+                                            <th>Nacimiento</th>
+                                            <th>Alta</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot> -->
+                                    <tbody>
+                                        <tr>
+                                            <td>Juan García</td>
+                                            <td>Administrador</td>
+                                            <td>228-567-1234</td>
+                                            <td>juan.garcia@gmail.com</td>
+                                            <td>1990-05-12</td>
+                                            <td>2023-03-10</td> 
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>María Hernández</td>
+                                            <td>Vendedor</td>
+                                            <td>228-678-2345</td>
+                                            <td>m.hernandez@hotmail.com</td>
+                                            <td>1987-12-23</td>
+                                            <td>2023-02-25</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>José Rodríguez</td>
+                                            <td>Almacen</td>
+                                            <td>228-789-3456</td>
+                                            <td>jose.rodriguez@yahoo.com.mx</td>
+                                            <td>1985-09-17</td>
+                                            <td>2023-04-15</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ana Flores</td>
+                                            <td>Vendedor</td>
+                                            <td>228-890-4567</td>
+                                            <td>ana.flores@gmail.com</td>
+                                            <td>1992-02-28</td>
+                                            <td>2023-05-01</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Carlos Gutiérrez</td>
+                                            <td>Almacen</td>
+                                            <td>228-901-5678</td>
+                                            <td>carlos.gutierrez@hotmail.com.mx</td>
+                                            <td>1988-11-03</td>
+                                            <td>2023-03-27</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vendedor</td>
+                                            <td>Almacen</td>
+                                            <td>228-012-6789</td>
+                                            <td>luis.gonzalez@yahoo.com.mx</td>
+                                            <td>1995-07-10</td>
+                                            <td>2023-02-18</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Luis González</td>
+                                            <td>Administrador</td>
+                                            <td>228-123-7890</td>
+                                            <td>luis.gonzalez@yahoo.com.mx</td>
+                                            <td>1986-04-01</td>
+                                            <td>2023-01-31</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Carmen Ortiz</td>
+                                            <td>Almacen</td>
+                                            <td>228-234-8901</td>
+                                            <td>carmen.ortiz@hotmail.com</td>
+                                            <td>2010/10/14</td>
+                                            <td>2023-04-07</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Antonio Moreno</td>
+                                            <td>Vendedor</td>
+                                            <td>228-345-9012</td>
+                                            <td>antonio.moreno@gmail.com.mx</td>
+                                            <td>1993-08-14</td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rosa Jiménez</td>
+                                            <td>Administrador</td>
+                                            <td>228-456-0123</td>
+                                            <td>rosa.jimenez@yahoo.com</td>
+                                            <td>1989-01-26</td>
+                                            <td>2023-05-09</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Francisco Pérez</td>
+                                            <td>Vendedor</td>
+                                            <td>228-567-1234</td>
+                                            <td>francisco.perez@gmail.com</td>
+                                            <td>1991-06-08</td>
+                                            <td>2023-02-14</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Teresa López</td>
+                                            <td>Vendedor</td>
+                                            <td>228-678-2345</td>
+                                            <td>francisco.perez@gmail.com</td>
+                                            <td>1987-09-30</td>
+                                            <td>2023-03-30</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Miguel Álvarez</td>
+                                            <td>Administrador</td>
+                                            <td>228-789-3456</td>
+                                            <td>miguel.alvarez@yahoo.com</td>
+                                            <td>1994-12-02</td>
+                                            <td>2023-05-22</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adriana Ruiz</td>
+                                            <td>Administrador</td>
+                                            <td>228-890-4567</td>
+                                            <td>adriana.ruiz@gmail.com.mx</td>
+                                            <td>1990-03-21</td>
+                                            <td>2023-06-08</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Manuel Sánchez</td>
+                                            <td>Vendedor</td>
+                                            <td>228-901-5678</td>
+                                            <td>manuel.sanchez@hotmail.com</td>
+                                            <td>1988-10-15</td>
+                                            <td>2023-04-01</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sofía Castro</td>
+                                            <td>Almacen</td>
+                                            <td>228-012-6789</td>
+                                            <td>sofia.castro@yahoo.com.mx</td>
+                                            <td>1995-02-19</td>
+                                            <td>2023-05-18</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jorge Medina</td>
+                                            <td>Almacen</td>
+                                            <td>228-123-7890</td>
+                                            <td>jorge.medina@gmail.com</td>
+                                            <td>1992-07-28</td>
+                                            <td>2023-03-02</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Victoria Mendoza</td>
+                                            <td>Vendedor</td>
+                                            <td>228-234-8901</td>
+                                            <td>victoria.mendoza@hotmail.com.mx</td>
+                                            <td>1984-11-05</td>
+                                            <td>2023-04-26</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rafael Navarro</td>
+                                            <td>Almacen</td>
+                                            <td>228-345-9012</td>
+                                            <td>rafael.navarro@yahoo.com</td>
+                                            <td>1993-01-08</td>
+                                            <td>2023-05-12</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Natalia Morales</td>
+                                            <td>Vendedor</td>
+                                            <td>228-456-0123</td>
+                                            <td>natalia.morales@gmail.com.mx</td>
+                                            <td>1986-06-22</td>
+                                            <td>2023-03-25</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Guillermo Aguilar</td>
+                                            <td>Vendedor</td>
+                                            <td>228-567-1234</td>
+                                            <td>guillermo.aguilar@hotmail.com</td>
+                                            <td>1991-09-16</td>
+                                            <td>2023-04-10</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marisol Vega</td>
+                                            <td>Almacen</td>
+                                            <td>228-678-2345</td>
+                                            <td>marisol.vega@gmail.com.mx</td>
+                                            <td>1988-04-12</td>
+                                            <td>2023-05-06</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Arturo Rosales</td>
+                                            <td>Administrador</td>
+                                            <td>228-789-3456</td>
+                                            <td>arturo.rosales@yahoo.com</td>
+                                            <td>1994-05-26</td>
+                                            <td>2023-03-20</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gabriela Valdez</td>
+                                            <td>Almacen</td>
+                                            <td>228-890-4567</td>
+                                            <td>gabriela.valdez@hotmail.com.mx</td>
+                                            <td>1990-08-09</td>
+                                            <td>2023-02-09</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mario Núñez</td>
+                                            <td>Vendedor</td>
+                                            <td>228-901-5678</td>
+                                            <td>gabriela.valdez@hotmail.com.mx</td>
+                                            <td>1985-12-31</td>
+                                            <td>2023-01-05</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Beatriz Escobar</td>
+                                            <td>Almacen</td>
+                                            <td>228-012-6789</td>
+                                            <td>beatriz.escobar@yahoo.com.mx</td>
+                                            <td>1987-03-07</td>
+                                            <td>2023-05-29</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ricardo Torres</td>
+                                            <td>Almacen</td>
+                                            <td>228-123-7890</td>
+                                            <td>ricardo.torres@hotmail.com</td>
+                                            <td>1991-09-10</td>
+                                            <td>2023-06-21</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Paloma Martínez</td>
+                                            <td>Administrador</td>
+                                            <td>228-234-8901</td>
+                                            <td>paloma.martinez@gmail.com.mx</td>
+                                            <td>1992-02-23</td>
+                                            <td>2023-03-08</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Eduardo Fuentes</td>
+                                            <td>Almacen</td>
+                                            <td>228-345-9012</td>
+                                            <td>eduardo.fuentes@yahoo.com</td>
+                                            <td>1989-11-19</td>
+                                            <td>2023-04-18</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Isabel Durán</td>
+                                            <td>Vendedor</td>
+                                            <td>228-456-0123</td>
+                                            <td>isabel.duran@hotmail.com.mx</td>
+                                            <td>1986-06-03</td>
+                                            <td>2023-06-05</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>César Díaz</td>
+                                            <td>Almacen</td>
+                                            <td>228-567-1234</td>
+                                            <td>cesar.diaz@gmail.com</td>
+                                            <td>1993-12-14</td>
+                                            <td>2023-03-23</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ana Karenina García</td>
+                                            <td>Administrador</td>
+                                            <td>228-678-2345</td>
+                                            <td>ana.garcia@yahoo.com.mx</td>
+                                            <td>1990-04-27</td>
+                                            <td>2023-04-19</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alejandro Contreras</td>
+                                            <td>Vendedor</td>
+                                            <td>228-789-3456</td>
+                                            <td>alejandro.contreras@hotmail.com</td>
+                                            <td>1995-01-02</td>
+                                            <td>2023-05-13</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Andrea Vargas</td>
+                                            <td>Vendedor</td>
+                                            <td>228-890-4567</td>
+                                            <td>andrea.vargas@gmail.com.mx</td>
+                                            <td>1987-07-07</td>
+                                            <td>2023-06-01</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Armando Reyes</td>
+                                            <td>Almacen</td>
+                                            <td>228-901-5678</td>
+                                            <td>armando.reyes@yahoo.com</td>
+                                            <td>1989-03-16</td>
+                                            <td>2023-04-07</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Silvia Castro</td>
+                                            <td>Vendedor</td>
+                                            <td>228-901-5678</td>
+                                            <td>silvia.castro@hotmail.com.mx</td>
+                                            <td>1996-06-11</td>
+                                            <td>2023-03-09</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Héctor Velázquez</td>
+                                            <td>Vendedor</td>
+                                            <td>228-123-7890</td>
+                                            <td>hector.velazquez@gmail.com</td>
+                                            <td>1988-09-05</td>
+                                            <td>2023-05-17</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Daniela Márquez</td>
+                                            <td>Almacen</td>
+                                            <td>228-234-8901</td>
+                                            <td>daniela.marquez@yahoo.com.mx</td>
+                                            <td>1991-05-29</td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jesús González</td>
+                                            <td>Vendedor</td>
+                                            <td>228-345-9012</td>
+                                            <td>jesus.gonzalez@hotmail.com</td>
+                                            <td>1986-08-07</td>
+                                            <td>2023-04-02</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alma García</td>
+                                            <td>Almacen</td>
+                                            <td>228-456-0123</td>
+                                            <td>alma.garcia@gmail.com.mx</td>
+                                            <td>1994-03-18</td>
+                                            <td>2023-05-23</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>  
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script> 
+    </body>
+</html>
