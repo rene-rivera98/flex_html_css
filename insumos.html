@@ -49,41 +49,29 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar paquete</h4>
+                  <h4 class="modal-title">Modificar insumo</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
                 <div class="modal-body">
                   <div class="input-group">
-                    <span style="margin-bottom: 2%;">#CODIGO PAQUETE</span>
+                    <span style="margin-bottom: 2%;">#ID INSUMO</span>
+                  </div>
+    
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre de insumo" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
-                  </div>
-                  <div>
-                    <select class="input-group" style="height: 25pt; margin-bottom: 2%;  margin-right: 2%; width: 100%;">
-                        <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                        <option class="form-control"value="Fiestas">Fiestas y cumpleaños</option>
-                        <option class="form-control" value="Familiar">Familiar</option>
-                        <option class="form-control" value="Diversion">Diversión</option>
-                      </select>
+                    <input type="number" class="form-control" placeholder="Codigo de barras" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio venta" style="margin-bottom: 2%;">
+                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Min. personas" style="margin-bottom: 2%;">
+                    <input type="text" class="form-control" placeholder="Unidad de medida" style="margin-bottom: 2%;">
                   </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Max. personas" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%;"></textarea>                  
-                  </div>
-                  
-                    </div>
-      
+                </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -102,7 +90,7 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">¿Seguro desea eliminar este paquete?</h4>
+                  <h4 class="modal-title">¿Seguro desea eliminar este insumo?</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
@@ -125,58 +113,30 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Crear paquete</h4>    
+                  <h4 class="modal-title">Agregar nuevo insumo</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
-                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                    <option class="form-control"value="Fiestas">Fiestas y cumpleaños</option>
-                    <option class="form-control" value="Familiar">Familiar</option>
-                    <option class="form-control" value="Diversion">Diversión</option>
-                </select>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Código del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
-
-                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+                    <input type="number" class="form-control" placeholder="Codigo de barras" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Num. min. personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
-    
-                    <input type="number" class="form-control" placeholder="Num. max. personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="Unidad de medida" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
-                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></textarea>
+                    <input type="number" class="form-control" placeholder="Stock" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
                 </div>
+                
                 <!-- Modal body -->
                 <div class="modal-body">
                     <!-- TABLA -->
-                        <div class="container">
-                            <div class="row">
-                                <table border="1" class="table" id="tablaprueba">
-                                <thead class="thead-dark">
-                                    <tr>
-                                    <th>Productos</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                                </table>
-
-                                <div class="form-group">
-                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
-                                <button type="button" class="btn btn-danger" onclick="eliminarFila()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
-                                </div>
-                            </div>
-                        </div>
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <div class="input-group">
-                        <input type="number" class="form-control" placeholder="Precio por persona" style="margin-bottom: 2%;">
-                        <input type="number" class="form-control" placeholder="Precio de venta" style="margin-bottom: 2%;">
-                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Crear</button>
+                  <button type="button" class="btn btn-primary">Registrar</button>
                 </div>
       
               </div>
@@ -279,29 +239,28 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Paquetes Registrados</h1>
+                        <h1 class="mt-4">Tabla: Insumos Registrados</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                            <li class="breadcrumb-item active">Paquetes</li>
+                            <li class="breadcrumb-item active">Insumos</li>
                         </ol>
                       
                         <!-- TABLA -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Crear <img src="/node_modules/bootstrap-icons/icons/plus-square-fill.svg"></button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Agregar insumo <img src="/node_modules/bootstrap-icons/icons/plus-circle-fill.svg"></button>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Código</th>
+                                            <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Categoria</th>
-                                            <th>Precio venta</th>
-                                            <th>Min.personas</th>
-                                            <th>Max.personas</th>
-                                            <th>Descripción</th>
-                                            <th>Acción</th>
+                                            <th>Codigo</th>
+                                            <th>Precio de compra</th>
+                                            <th>Unidad de medida</th>
+                                            <th>Stock</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
@@ -316,20 +275,12 @@
                                     </tfoot> -->
                                     <tbody>
                                         <tr>
-                                            <td>1424</td>
-                                            <td>FIESTA VIP</td>
-                                            <td>Fiesta y cumpleaños</td>
-                                            <td>$4,500.00</td>
-                                            <td>10</td>
-                                            <td>40</td>
-                                            <td>- 180 min de salto libre<br>
-                                                - 60 min para consumo de alimentos<br>
-                                                - 1 par de Flexsocks<br>
-                                                - Pastel de cumpleaños<br>
-                                                - Acompañamiento en Protocolo de Cumpleaños<br>
-                                                - Anfitrión Animador<br>
-                                                - Decoración de Globos<br>
-                                            </td> 
+                                            <td>1</td>
+                                            <td>CHAROLA MULTI USOS CAFETERIA</td>
+                                            <td>7622210259009</td>
+                                            <td>134</td>
+                                            <td>pieza</td>
+                                            <td>235</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -338,30 +289,24 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>1425</td>
-                                            <td>FIESTA FELIZ</td>
-                                            <td>Fiesta y cumpleaños</td>
-                                            <td>$2,500.00</td>
-                                            <td>10</td>
-                                            <td>20</td>
-                                            <td>- 2 Horas de salto libre<br>
-                                                - 1 par de Flexsocks<br>
-                                                - Acompañamiento en Protocolo de Cumpleaños<br>
-                                                - Decoración de globos sencilla.<br>
-                                            </td>
+                                            <td>2</td>
+                                            <td>JAMON PAVO</td>
+                                            <td>7622210259010</td>
+                                            <td>203</td>
+                                            <td>pieza</td>
+                                            <td>256</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>1426</td>
-                                            <td>AMIGOS/FAMILIAR</td>
-                                            <td>Diversión</td>
-                                            <td>$350.00</td>
-                                            <td>1</td>
-                                            <td>6</td>
-                                            <td>- Salta 1 hora de salto con tu familia y amigos.</td>
+                                            <td>3</td>
+                                            <td>LECHE LALA DESLACTOSADA</td>
+                                            <td>7622210259001</td>
+                                            <td>290</td>
+                                            <td>LT</td>
+                                            <td>102</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
@@ -380,5 +325,6 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script> 
         <script src="js/add_row.js"></script>
+        <script src="js/checkbox.js"></script>
     </body>
 </html>
