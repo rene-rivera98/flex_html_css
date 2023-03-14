@@ -49,45 +49,79 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar paquete</h4>
+                  <h4 class="modal-title">Modificar paquete</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-      
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
+                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
+                    <option class="form-control"value="Fiestas">Fiestas y cumpleaños</option>
+                    <option class="form-control" value="Familiar">Pase</option>
+                </select>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+
+                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Num. de personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+    
+                    <input type="number" class="form-control" placeholder="Num. max. personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Duración estancia (min)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+    
+                    <input type="number" class="form-control" placeholder="Entrenadores" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></textarea>
+                </div>
+                <div class="input-group">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Permisos a camaras</label>
+                    
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 10%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Para mayores de edad</label>
+                  </div>
+                <div class="input-group">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Para menores de edad</label>
+                </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <div class="input-group">
-                    <span style="margin-bottom: 2%;">#CODIGO PAQUETE</span>
-                  </div>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
-                  </div>
-                  <div>
-                    <select class="input-group" style="height: 25pt; margin-bottom: 2%;  margin-right: 2%; width: 100%;">
-                        <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                        <option class="form-control"value="Fiestas">Fiestas y cumpleaños</option>
-                        <option class="form-control" value="Familiar">Familiar</option>
-                        <option class="form-control" value="Diversion">Diversión</option>
-                      </select>
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio venta" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Min. personas" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Max. personas" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%;"></textarea>                  
-                  </div>
-                  
-                    </div>
-      
+                    <!-- TABLA -->
+                        <div class="container">
+                            <div class="row">
+                                <table border="1" class="table" id="tablaprueba">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>Productos</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                </table>
+
+                                <div class="form-group">
+                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarFila()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                    <!-- FIN TABLA -->
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Precio de venta:</label>
+
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Precio" style="margin-bottom: 2%;">
+                        <input type="text" class="form-control" placeholder="IVA (%)" value="16 %" style="margin-bottom: 2%;">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Descuento (%)" style="margin-bottom: 2%;">
+                        <input type="number" class="form-control" placeholder="Precio de venta" style="margin-bottom: 2%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Guardar cambios</button>
+                  <button type="button" class="btn btn-primary">Crear</button>
                 </div>
       
               </div>
@@ -131,21 +165,36 @@
                 <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
                     <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
                     <option class="form-control"value="Fiestas">Fiestas y cumpleaños</option>
-                    <option class="form-control" value="Familiar">Familiar</option>
-                    <option class="form-control" value="Diversion">Diversión</option>
+                    <option class="form-control" value="Familiar">Pase</option>
                 </select>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Código del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
 
                     <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Num. min. personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                    <input type="number" class="form-control" placeholder="Num. de personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
     
                     <input type="number" class="form-control" placeholder="Num. max. personas" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                 </div>
                 <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Duración estancia (min)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+    
+                    <input type="number" class="form-control" placeholder="Entrenadores" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
                     <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></textarea>
+                </div>
+                <div class="input-group">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Permisos a camaras</label>
+                    
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 10%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Para mayores de edad</label>
+                  </div>
+                <div class="input-group">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Para menores de edad</label>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -170,9 +219,15 @@
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Precio de venta:</label>
+
                 <div class="modal-footer">
                     <div class="input-group">
-                        <input type="number" class="form-control" placeholder="Precio por persona" style="margin-bottom: 2%;">
+                        <input type="number" class="form-control" placeholder="Precio" style="margin-bottom: 2%;">
+                        <input type="text" class="form-control" placeholder="IVA (%)" value="16 %" style="margin-bottom: 2%;">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Descuento (%)" style="margin-bottom: 2%;">
                         <input type="number" class="form-control" placeholder="Precio de venta" style="margin-bottom: 2%;">
                     </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -357,7 +412,7 @@
                                         <tr>
                                             <td>1426</td>
                                             <td>AMIGOS/FAMILIAR</td>
-                                            <td>Diversión</td>
+                                            <td>Fiesta y cumpleaños</td>
                                             <td>$350.00</td>
                                             <td>1</td>
                                             <td>6</td>
