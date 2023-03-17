@@ -49,28 +49,49 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar proveedor</h4>
+                  <h4 class="modal-title">Modificar paquete de cafeteria</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-      
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%; border-color: rgb(204, 204, 204);">
+                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
+                    <option class="form-control"value="x">1</option>
+                    <option class="form-control" value="x">2</option>
+                </select>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Precio de venta ($)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <div class="input-group">
-                    <span style="margin-bottom: 2%;">#ID PROVEEDOR</span>
-                  </div>
-    
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="RFC" style="margin-bottom: 2%;">
-                  </div>
-                  
+                    <!-- TABLA -->
+                        <div class="container">
+                            <div class="row">
+                                <table border="1" class="table" id="tablaprueba3">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>Productos</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                </table>
+
+                                <div class="form-group">
+                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila3()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarFila3()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
+                                </div>
+                            </div>
+                        </div>
                 </div>
+                    <!-- FIN TABLA -->
                 <!-- Modal footer -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Guardar cambios</button>
+                  <button type="button" class="btn btn-primary">Crear</button>
                 </div>
       
               </div>
@@ -85,7 +106,7 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">¿Seguro desea eliminar este proveedor?</h4>
+                  <h4 class="modal-title">¿Seguro desea eliminar este paquete?</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
@@ -108,23 +129,54 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Registrar nuevo proveedor</h4>    
+                  <h4 class="modal-title">Crear paquete</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
+                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
+                    <option class="form-control"value="Fiestas">¿?</option>
+                    <option class="form-control" value="Familiar">¿?</option>
+                </select>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
 
-                    <input type="text" class="form-control" placeholder="RFC" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></textarea>
                 </div>
                 <!-- Modal body -->
+                
                 <div class="modal-body">
+                    <label style="margin-left: 2%;">Receta:</label>
                     <!-- TABLA -->
+                        <div class="container">
+                            <div class="row">
+                                <table border="1" class="table" id="tablaprueba4">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>Productos</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                </table>
+
+                                <div class="form-group">
+                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila4()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarFila4()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
+
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Precio de venta ($)" style="margin-bottom: 2%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Registrar</button>
+                  <button type="button" class="btn btn-primary">Crear</button>
                 </div>
       
               </div>
@@ -228,25 +280,26 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Proveedores Registrados</h1>
+                        <h1 class="mt-4">Tabla: Paquetes de Cafeteria Registrados</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                            <li class="breadcrumb-item active">Proveedores</li>
+                            <li class="breadcrumb-item active">Cafeteria</li>
                         </ol>
                       
                         <!-- TABLA -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Agregar proveedor <img src="/node_modules/bootstrap-icons/icons/person-plus-fill.svg"></button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Crear <img src="/node_modules/bootstrap-icons/icons/plus-square-fill.svg"></button>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>RFC</th>
-                                            <th>Acciones</th>
+                                            <th>Categoria</th>
+                                            <th>Precio venta</th>
+                                            <th>Acción</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
@@ -261,9 +314,10 @@
                                     </tfoot> -->
                                     <tbody>
                                         <tr>
-                                            <td>55</td>
-                                            <td>Costco</td>
-                                            <td>CME910715UB9</td>
+                                            <td>Bur1</td>
+                                            <td>Hamburguesa</td>
+                                            <td>¿?</td>
+                                            <td>85.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -272,18 +326,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>56</td>
-                                            <td>Ricolino</td>
-                                            <td>PRI190815SU0</td>
-                                            <td>
-                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>57</td>
-                                            <td>Sabritas</td>
-                                            <td>SAB730510K44</td>
+                                            <td>Bon1</td>
+                                            <td>Boneless</td>
+                                            <td>¿?</td>
+                                            <td>100.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
@@ -302,6 +348,5 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script> 
         <script src="js/add_row.js"></script>
-        <script src="js/checkbox.js"></script>
     </body>
 </html>

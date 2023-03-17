@@ -25,6 +25,7 @@ const eliminarFila = () => {
     table.deleteRow(rowCount - 1);
   }
 };
+
 const agregarFila2 = () => {
   const table = document.getElementById('tablaprueba2');
   const newRow = table.insertRow(-1);
@@ -43,7 +44,7 @@ const agregarFila2 = () => {
 };
 
 const eliminarFila2= () => {
-  const table = document.getElementById('tablaprueba');
+  const table = document.getElementById('tablaprueba2');
   const rowCount = table.rows.length;
   
   if (rowCount <= 1) {
@@ -52,3 +53,60 @@ const eliminarFila2= () => {
     table.deleteRow(rowCount - 1);
   }
 };
+////
+
+const agregarFila3 = () => {
+  const table = document.getElementById('tablaprueba3');
+  const newRow = table.insertRow(-1);
+  const newCell = newRow.insertCell(0);
+  const selectHTML = 
+  '<select style="width: 100%;">'
+  +'<option value="opcion0" selected disabled>Seleccione un producto...</option>'
+  +'<option value="opcion1">Charola multiusos</option>'
+  +'<option value="opcion2">Refresco</option>'
+  +'<option value="opcion3">Jamon de pavo</option>'
+  +'<option value="opcion4">Leche lala deslactosada</option>'
+  +'</select>';
+  newCell.innerHTML = selectHTML;
+};
+
+const eliminarFila4= () => {
+  const table = document.getElementById('tablaprueba4');
+  const rowCount = table.rows.length;
+  
+  if (rowCount <= 1) {
+    alert('No se puede eliminar el encabezado');
+  } else {
+    table.deleteRow(rowCount - 1);
+  }
+};
+//
+
+////
+
+const agregarFila4 = () => {
+  const table = document.getElementById('tablaprueba4');
+  const newRow = table.insertRow(-1);
+  const newCell = newRow.insertCell(0);
+  const selectHTML = 
+  '<select style="width: 100%;">'
+  +'<option value="opcion0" selected disabled>Seleccione un producto...</option>'
+  +'<option value="opcion1">Charola multiusos</option>'
+  +'<option value="opcion2">Refresco</option>'
+  +'<option value="opcion3">Jamon de pavo</option>'
+  +'<option value="opcion4">Leche lala deslactosada</option>'
+  +'</select>';
+  newCell.innerHTML = selectHTML;
+};
+
+const eliminarFila3= () => {
+  const table = document.getElementById('tablaprueba3');
+  const rowCount = table.rows.length;
+  
+  if (rowCount <= 1) {
+    alert('No se puede eliminar el encabezado');
+  } else {
+    table.deleteRow(rowCount - 1);
+  }
+};
+//
