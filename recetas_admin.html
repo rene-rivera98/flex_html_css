@@ -71,13 +71,6 @@
                   </div>
                   <div class="input-group">
                     <select class="input-group" style="height: 40px; margin-bottom: 2%;">
-                        <option class="form-control"value="" selected disabled>Selecciona producto resultante...</option>
-                        <option class="form-control"value="1">PEPILOKO(PREPARADO)[C-AS01]</option>
-                        <option class="form-control" value="2">PEPILOKO(SENCILLO)[C-AS0]</option>
-                    </select>
-                  </div>
-                  <div class="input-group">
-                    <select class="input-group" style="height: 40px; margin-bottom: 2%;">
                         <option class="form-control"value="" selected disabled>Selecciona el departamento...</option>
                         <option class="form-control"value="Frutas y verduras">Frutas y verduras</option>
                         <option class="form-control" value="Dulceria">Dulceria</option>
@@ -143,14 +136,6 @@
                 <input type="text" class="form-control" placeholder="Nombre de la receta" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Cantidad resultante" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <select class="input-group" style="height: 40px; margin-left: 2%; margin-right: 2%; margin-bottom: 2%;">
-                        <option class="form-control"value="" selected disabled>Selecciona producto resultante...</option>
-                        <option class="form-control"value="1">PEPILOKO(PREPARADO)[C-AS01]</option>
-                        <option class="form-control" value="2">PEPILOKO(SENCILLO)[C-AS0]</option>
-                    </select>
-                </div>
-                <div class="input-group">
                     <select class="input-group" style="height: 40px; margin-left: 2%; margin-right: 2%;">
                         <option class="form-control"value="" selected disabled>Selecciona el departamento...</option>
                         <option class="form-control"value="Frutas y verduras">Frutas y verduras</option>
@@ -182,81 +167,56 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <div class="sb-sidenav-menu-heading">Analisis</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-data-fill.svg"></div>
                                 Reportes
-                            </a>
-                            <a class="nav-link" href="users.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                Usuarios
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cart-plus-fill.svg"></div>
-                                Compras
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras.html" style="font-size: 120%;">Reporte</a>
-                                    <a class="nav-link" href="productos.html" style="font-size: 120%;">Productos</a>
-                                    <a class="nav-link" href="proveedores.html" style="font-size: 120%;">Proveedores</a>
+                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
+                                    <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
+                                    <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
+                                    <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
                                 </nav>
                             </div>
 
+                            <div class="sb-sidenav-menu-heading">Registros</div>
+                            <a class="nav-link" href="usuarios_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                Usuarios
+                            </a>
+                            <a class="nav-link" href="proveedores_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/truck.svg"></div>
+                                Proveedores
+                            </a>
+                            <a class="nav-link" href="productos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket-fill.svg"></div>
+                                Productos
+                            </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/box-seam-fill.svg"></div>
-                                Inventario
+                                Paquetes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="package.html" style="font-size: 120%;">Paquetes</a>
-                                    <a class="nav-link" href="insumos.html" style="font-size: 120%;">Insumos</a>
-                                    <a class="nav-link" href="recetas.html" style="font-size: 120%;">Recetas</a>
+                                    <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
+                                    <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
+                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
+                            
 
-                            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Inventario
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Recetas
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="insumos.html">Insumos</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div> -->
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="clientes.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                    Clientes
-                            </a>
-                            <a class="nav-link" href="caja.html">
+                            <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
+                            </a>
+                            <a class="nav-link" href="facturas_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-fill.svg"></div>
+                                Facturas
                             </a>
                         </div>
                     </div>
@@ -272,9 +232,9 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Recetas Registradas</h1>
+                        <h1 class="mt-4">Recetas</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Paquetes</a></li>
                             <li class="breadcrumb-item active">Recetas</li>
                         </ol>
                       

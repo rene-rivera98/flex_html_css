@@ -49,33 +49,49 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar insumo</h4>
+                  <h4 class="modal-title">Modificar paquete de cafeteria</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-      
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%; border-color: rgb(204, 204, 204);">
+                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
+                    <option class="form-control"value="x">1</option>
+                    <option class="form-control" value="x">2</option>
+                </select>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Precio de venta ($)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                </div>
+                
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <div class="input-group">
-                    <span style="margin-bottom: 2%;">#ID INSUMO</span>
-                  </div>
-    
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre de insumo" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Codigo de barras" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Unidad de medida" style="margin-bottom: 2%;">
-                  </div>
+                    <!-- TABLA -->
+                        <div class="container">
+                            <div class="row">
+                                <table border="1" class="table" id="tablaprueba3">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>Productos</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                </table>
+
+                                <div class="form-group">
+                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila3()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarFila3()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
+                                </div>
+                            </div>
+                        </div>
                 </div>
+                    <!-- FIN TABLA -->
                 <!-- Modal footer -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Guardar cambios</button>
+                  <button type="button" class="btn btn-primary">Crear</button>
                 </div>
       
               </div>
@@ -90,7 +106,7 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">¿Seguro desea eliminar este insumo?</h4>
+                  <h4 class="modal-title">¿Seguro desea eliminar este paquete?</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
@@ -113,30 +129,54 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Agregar nuevo insumo</h4>    
+                  <h4 class="modal-title">Crear paquete</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
+                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
+                    <option class="form-control"value="Fiestas">¿?</option>
+                    <option class="form-control" value="Familiar">¿?</option>
+                </select>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <input type="number" class="form-control" placeholder="Codigo de barras" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+
+                    <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <input type="text" class="form-control" placeholder="Unidad de medida" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <textarea type="text" class="form-control" placeholder="Descripción" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></textarea>
                 </div>
-                <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Stock" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                </div>
-                
                 <!-- Modal body -->
+                
                 <div class="modal-body">
+                    <label style="margin-left: 2%;">Receta:</label>
                     <!-- TABLA -->
+                        <div class="container">
+                            <div class="row">
+                                <table border="1" class="table" id="tablaprueba4">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th>Productos</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                </table>
+
+                                <div class="form-group">
+                                <button type="button" class="btn btn-primary mr-2" onclick="agregarFila4()"><img src="/node_modules/bootstrap-icons/icons/plus.svg"></button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarFila4()"><img src="/node_modules/bootstrap-icons/icons/dash.svg"></button>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
+
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Precio de venta ($)" style="margin-bottom: 2%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Registrar</button>
+                  <button type="button" class="btn btn-primary">Crear</button>
                 </div>
       
               </div>
@@ -149,81 +189,56 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <div class="sb-sidenav-menu-heading">Analisis</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-data-fill.svg"></div>
                                 Reportes
-                            </a>
-                            <a class="nav-link" href="users.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                Usuarios
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cart-plus-fill.svg"></div>
-                                Compras
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras.html" style="font-size: 120%;">Reporte</a>
-                                    <a class="nav-link" href="productos.html" style="font-size: 120%;">Productos</a>
-                                    <a class="nav-link" href="proveedores.html" style="font-size: 120%;">Proveedores</a>
+                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
+                                    <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
+                                    <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
+                                    <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
                                 </nav>
                             </div>
 
+                            <div class="sb-sidenav-menu-heading">Registros</div>
+                            <a class="nav-link" href="usuarios_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                Usuarios
+                            </a>
+                            <a class="nav-link" href="proveedores_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/truck.svg"></div>
+                                Proveedores
+                            </a>
+                            <a class="nav-link" href="productos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket-fill.svg"></div>
+                                Productos
+                            </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/box-seam-fill.svg"></div>
-                                Inventario
+                                Paquetes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="package.html" style="font-size: 120%;">Paquetes</a>
-                                    <a class="nav-link" href="insumos.html" style="font-size: 120%;">Insumos</a>
-                                    <a class="nav-link" href="recetas.html" style="font-size: 120%;">Recetas</a>
+                                    <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
+                                    <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
+                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
+                            
 
-                            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Inventario
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Recetas
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="insumos.html">Insumos</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div> -->
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="clientes.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                    Clientes
-                            </a>
-                            <a class="nav-link" href="caja.html">
+                            <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
+                            </a>
+                            <a class="nav-link" href="facturas_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-fill.svg"></div>
+                                Facturas
                             </a>
                         </div>
                     </div>
@@ -239,28 +254,26 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Insumos Registrados</h1>
+                        <h1 class="mt-4">Paquetes de Cafeteria</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                            <li class="breadcrumb-item active">Insumos</li>
+                            <li class="breadcrumb-item"><a href="index.html">Paquetes</a></li>
+                            <li class="breadcrumb-item active">Cafeteria</li>
                         </ol>
                       
                         <!-- TABLA -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Agregar insumo <img src="/node_modules/bootstrap-icons/icons/plus-circle-fill.svg"></button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Crear <img src="/node_modules/bootstrap-icons/icons/plus-square-fill.svg"></button>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>Codigo</th>
-                                            <th>Precio de compra</th>
-                                            <th>Unidad de medida</th>
-                                            <th>Stock</th>
-                                            <th>Acciones</th>
+                                            <th>Categoria</th>
+                                            <th>Precio venta</th>
+                                            <th>Acción</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
@@ -275,12 +288,10 @@
                                     </tfoot> -->
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>CHAROLA MULTI USOS CAFETERIA</td>
-                                            <td>7622210259009</td>
-                                            <td>134</td>
-                                            <td>pieza</td>
-                                            <td>235</td>
+                                            <td>Bur1</td>
+                                            <td>Hamburguesa</td>
+                                            <td>¿?</td>
+                                            <td>85.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -289,24 +300,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td>JAMON PAVO</td>
-                                            <td>7622210259010</td>
-                                            <td>203</td>
-                                            <td>pieza</td>
-                                            <td>256</td>
-                                            <td>
-                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>LECHE LALA DESLACTOSADA</td>
-                                            <td>7622210259001</td>
-                                            <td>290</td>
-                                            <td>LT</td>
-                                            <td>102</td>
+                                            <td>Bon1</td>
+                                            <td>Boneless</td>
+                                            <td>¿?</td>
+                                            <td>100.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
@@ -325,6 +322,5 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script> 
         <script src="js/add_row.js"></script>
-        <script src="js/checkbox.js"></script>
     </body>
 </html>

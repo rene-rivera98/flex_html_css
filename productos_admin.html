@@ -49,34 +49,34 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar cliente</h4>
+                  <h4 class="modal-title">Modificar producto</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
                 <div class="modal-body">
                   <div class="input-group">
-                    <span style="margin-bottom: 2%;">#ID CLIENTE</span>
+                    <span style="margin-bottom: 2%;">#CODIGO PRODUCTO</span>
                   </div>
     
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Correo electronico" style="margin-bottom: 2%;">
+                    <input type="number" class="form-control" placeholder="Precio venta" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Telefono" style="margin-bottom: 2%;">
+                    <input type="number" class="form-control" placeholder="Precio compra" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Codigo Postal" style="margin-bottom: 2%;">
+                    <input type="text" class="form-control" placeholder="Tamaño (gr/mL)" style="margin-bottom: 2%;">
                   </div>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre del contacto" style="margin-bottom: 2%;">
+                  <div class="input-group form-check form-switch">
+                    <input name="chec" class="form-check-input" type="checkbox" id="chec" onChange="comprobar(this);">
+                        <label for="chec" style="margin-left: 2%;">Añadir descuento</label>
+                        <input class="form-control" name="text" id="boton" type="number" style="display:none; margin-left: 2%;" placeholder="%"/>
                   </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Telefono del contacto" style="margin-bottom: 2%;">
-                  </div>
+                  
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
@@ -96,7 +96,7 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">¿Seguro desea eliminar este cliente?</h4>
+                  <h4 class="modal-title">¿Seguro desea eliminar este producto?</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
@@ -119,30 +119,27 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Registrar nuevo cliente</h4>    
+                  <h4 class="modal-title">Registrar nuevo producto</h4>    
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <select class="input-group" style="height: 40px; margin-left: 2%; margin-right: 2%;">
-                        <option class="form-control"value="" selected disabled>Selecciona el sexo...</option>
-                        <option class="form-control"value="Hombre">Hombre</option>
-                        <option class="form-control" value="Mujer">Mujer</option>
-                    </select>
+                    <input type="text" class="form-control" placeholder="Nombre del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+
+                    <input type="number" class="form-control" placeholder="Precio de venta" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="date" class="form-control" placeholder="Fecha de nacimiento" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <input type="text" class="form-control" placeholder="Correo electronico" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+    
+                    <input type="text" class="form-control" placeholder="Tamaño (gr/mL)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Telefono" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <input type="number" class="form-control" placeholder="Codigo Postal" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <label class="form-label" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">Fecha de caducidad</label>
+                    <label class="form-label" style="margin-bottom: 2%; margin-left: 20%; margin-right: 2%;">Fecha de compra</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre de contacto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-                    <input type="number" class="form-control" placeholder="Telefono de contacto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="date" class="form-control" placeholder="Fecha de caducidad" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
+                    <input type="date" class="form-control" placeholder="Fecha de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
                 </div>
-                
                 <!-- Modal body -->
                 <div class="modal-body">
                     <!-- TABLA -->
@@ -164,81 +161,56 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <div class="sb-sidenav-menu-heading">Analisis</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-data-fill.svg"></div>
                                 Reportes
-                            </a>
-                            <a class="nav-link" href="users.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                Usuarios
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cart-plus-fill.svg"></div>
-                                Compras
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras.html" style="font-size: 120%;">Reporte</a>
-                                    <a class="nav-link" href="productos.html" style="font-size: 120%;">Productos</a>
-                                    <a class="nav-link" href="proveedores.html" style="font-size: 120%;">Proveedores</a>
+                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
+                                    <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
+                                    <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
+                                    <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
                                 </nav>
                             </div>
 
+                            <div class="sb-sidenav-menu-heading">Registros</div>
+                            <a class="nav-link" href="usuarios_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                Usuarios
+                            </a>
+                            <a class="nav-link" href="proveedores_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/truck.svg"></div>
+                                Proveedores
+                            </a>
+                            <a class="nav-link" href="productos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket-fill.svg"></div>
+                                Productos
+                            </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/box-seam-fill.svg"></div>
-                                Inventario
+                                Paquetes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="package.html" style="font-size: 120%;">Paquetes</a>
-                                    <a class="nav-link" href="insumos.html" style="font-size: 120%;">Insumos</a>
-                                    <a class="nav-link" href="recetas.html" style="font-size: 120%;">Recetas</a>
+                                    <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
+                                    <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
+                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
+                            
 
-                            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Inventario
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Recetas
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="insumos.html">Insumos</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div> -->
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="clientes.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
-                                    Clientes
-                            </a>
-                            <a class="nav-link" href="caja.html">
+                            <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
+                            </a>
+                            <a class="nav-link" href="facturas_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-fill.svg"></div>
+                                Facturas
                             </a>
                         </div>
                     </div>
@@ -254,31 +226,29 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Clientes Registrados</h1>
+                        <h1 class="mt-4">Tabla: Productos Registrados</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                            <li class="breadcrumb-item active">Clientes</li>
+                            <li class="breadcrumb-item active">Productos</li>
                         </ol>
                       
                         <!-- TABLA -->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Registrar cliente <img src="/node_modules/bootstrap-icons/icons/person-plus-fill.svg"></button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Nuevo <img src="/node_modules/bootstrap-icons/icons/file-plus-fill.svg"></button>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>Sexo</th>
-                                            <th>Nacimiento</th>
-                                            <th>Correo electronico</th>
-                                            <th>Telefono</th>
-                                            <th>C.P.</th>
-                                            <th>Nombre/contacto</th>
-                                            <th>Telefono/contacto</th>
-                                            <th>Puntos</th>
+                                            <th>Precio compra</th>
+                                            <th>Precio venta</th>
+                                            <th>Stock</th>
+                                            <th>Descripción</th>
+                                            <th>Descuento</th>
+                                            <th>Fecha de caducidad</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -294,16 +264,14 @@
                                     </tfoot> -->
                                     <tbody>
                                         <tr>
-                                            <td>11</td>
-                                            <td>Juan Martinez</td>
-                                            <td>Hombre</td>
-                                            <td>1980-03-02</td>
-                                            <td>juanmtz@gmail.com</td>
-                                            <td>2283927392</td>
-                                            <td>92019</td>
-                                            <td>Susan Martinez</td>
-                                            <td>2283726382</td>
-                                            <td>100</td>
+                                            <td>1</td>
+                                            <td>Carlos V Duo</td>
+                                            <td>7</td>
+                                            <td>10</td>
+                                            <td>250</td>
+                                            <td>35 GR</td>
+                                            <td>20%</td>
+                                            <td>2025-02-02</td> 
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -312,32 +280,28 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>12</td>
-                                            <td>Pedro Hernandez</td>
-                                            <td>Hombre</td>
-                                            <td>1985-02-01</td>
-                                            <td>pedrohdz@gmail.com</td>
-                                            <td>2288281828</td>
-                                            <td>91028</td>
-                                            <td>Andrea Perez</td>
-                                            <td>2282918219</td>
-                                            <td>50</td>
+                                            <td>2</td>
+                                            <td>Bubulubu</td>
+                                            <td>5</td>
+                                            <td>8</td>
+                                            <td>200</td>
+                                            <td>50GR</td>
+                                            <td>0</td>
+                                            <td>2026-01-06</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>13</td>
-                                            <td>Lesly Sanchez</td>
-                                            <td>Mujer</td>
-                                            <td>1999-02-18</td>
-                                            <td>lesly@gmail.com</td>
-                                            <td>2282392732</td>
-                                            <td>91056</td>
-                                            <td>Cecilia Sanchez</td>
-                                            <td>2283928372</td>
-                                            <td>100</td>
+                                            <td>3</td>
+                                            <td>Chips Ahoy</td>
+                                            <td>7</td>
+                                            <td>10</td>
+                                            <td>150</td>
+                                            <td>35GR</td>
+                                            <td>0</td>
+                                            <td>2024-01-01</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
