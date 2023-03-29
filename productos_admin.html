@@ -23,10 +23,7 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
+
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -50,7 +47,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Modificar producto</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
@@ -60,21 +56,13 @@
                   </div>
     
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
+                    <input type="text" class="form-control" placeholder="Codigo" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio venta" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio compra" style="margin-bottom: 2%;">
+                    <input type="text" class="form-control" placeholder="Nombre del producto" style="margin-bottom: 2%;">
                   </div>
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Tamaño (gr/mL)" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group form-check form-switch">
-                    <input name="chec" class="form-check-input" type="checkbox" id="chec" onChange="comprobar(this);">
-                        <label for="chec" style="margin-left: 2%;">Añadir descuento</label>
-                        <input class="form-control" name="text" id="boton" type="number" style="display:none; margin-left: 2%;" placeholder="%"/>
                   </div>
                   
                 </div>
@@ -97,7 +85,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">¿Seguro desea eliminar este producto?</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal footer -->
@@ -120,25 +107,25 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Registrar nuevo producto</h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="Codigo del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
 
-                    <input type="number" class="form-control" placeholder="Precio de venta" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="Nombre del producto" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
-    
-                    <input type="text" class="form-control" placeholder="Tamaño (gr/mL)" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
+                    <input type="number" class="form-control" placeholder="Cantidad" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
                 </div>
                 <div class="input-group">
-                    <label class="form-label" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">Fecha de caducidad</label>
-                    <label class="form-label" style="margin-bottom: 2%; margin-left: 20%; margin-right: 2%;">Fecha de compra</label>
-                </div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">grs</label>
+                    
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 10%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">mL</label>
+                  </div>
                 <div class="input-group">
-                    <input type="date" class="form-control" placeholder="Fecha de caducidad" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
-                    <input type="date" class="form-control" placeholder="Fecha de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-left: 2%;">
+                    <label class="form-check-label" for="flexCheckDefault" style="margin-left: 1%;">Pieza</label>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -169,7 +156,6 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
                                     <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
                                     <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
                                     <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
@@ -198,12 +184,18 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
                                     <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
-                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link" href="compras_admin2.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
                             <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
@@ -226,9 +218,9 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Productos Registrados</h1>
+                        <h1 class="mt-4">Productos</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Registros</a></li>
                             <li class="breadcrumb-item active">Productos</li>
                         </ol>
                       
@@ -243,35 +235,20 @@
                                         <tr>
                                             <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>Precio compra</th>
                                             <th>Precio venta</th>
                                             <th>Stock</th>
-                                            <th>Descripción</th>
-                                            <th>Descuento</th>
-                                            <th>Fecha de caducidad</th>
+                                            <th>Unidad de medida</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Carlos V Duo</td>
-                                            <td>7</td>
-                                            <td>10</td>
-                                            <td>250</td>
-                                            <td>35 GR</td>
-                                            <td>20%</td>
-                                            <td>2025-02-02</td> 
+                                            <td>AGUA ALCALINA BOTELLA</td>
+                                            <td>42.00</td>
+                                            <td>41</td>
+                                            <td>500 ML</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -281,13 +258,10 @@
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Bubulubu</td>
-                                            <td>5</td>
-                                            <td>8</td>
-                                            <td>200</td>
-                                            <td>50GR</td>
-                                            <td>0</td>
-                                            <td>2026-01-06</td>
+                                            <td>AGUA ALCALINA BOTELLA</td>
+                                            <td>50.00</td>
+                                            <td>32</td>
+                                            <td>900 ML</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
@@ -295,20 +269,183 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Chips Ahoy</td>
-                                            <td>7</td>
-                                            <td>10</td>
-                                            <td>150</td>
-                                            <td>35GR</td>
-                                            <td>0</td>
-                                            <td>2024-01-01</td>
+                                            <td>AGUA CIEL BOTELLA</td>
+                                            <td>28.00</td>
+                                            <td>31</td>
+                                            <td>600 ML</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>BUBULUBU</td>
+                                            <td>10.00</td>
+                                            <td>61</td>
+                                            <td>25 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>BUBULUBU GRANDE</td>
+                                            <td>15.00</td>
+                                            <td>24</td>
+                                            <td>35 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>CARLOS V DUO</td>
+                                            <td>28.00</td>
+                                            <td>12</td>
+                                            <td>34 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>CHOCOLATE CARLOS V</td>
+                                            <td>15.00</td>
+                                            <td>24</td>
+                                            <td>18 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>CHOCOLATE MILKYWAY</td>
+                                            <td>25.00</td>
+                                            <td>23</td>
+                                            <td>52.7 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>CHOCOLATE SNICKERS</td>
+                                            <td>25.00</td>
+                                            <td>21</td>
+                                            <td>52.7 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>EPURA</td>
+                                            <td>28.00</td>
+                                            <td>42</td>
+                                            <td>600 ML</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>GOMITA ARCOIRIS</td>
+                                            <td>39.00</td>
+                                            <td>32</td>
+                                            <td>70 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>GUSANO BICOLOR</td>
+                                            <td>39.00</td>
+                                            <td>34</td>
+                                            <td>80 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>INGREDIENTE EXTRA QUESO AMARILLO</td>
+                                            <td>20.00</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>JUGO DEL VALLE FRUT SABOR CITRICOS</td>
+                                            <td>35.00</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>MANGOMITA</td>
+                                            <td>39.00</td>
+                                            <td>12</td>
+                                            <td>65 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
+                                            <td>PAPAS FLEXZONE</td>
+                                            <td>48.00</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>17</td>
+                                            <td>PASAS CON CHOCOLATE</td>
+                                            <td>45.00</td>
+                                            <td>-</td>
+                                            <td>65 GRS</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
+                                            <td>VASO DE VERDURA</td>
+                                            <td>30.00</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
+                                            </td>
+                                        </tr>
+
                                     </tbody>
-                                </table>
+                                </table>    
                             </div>
                         </div>
                     </div>

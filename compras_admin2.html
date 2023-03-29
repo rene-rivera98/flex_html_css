@@ -33,28 +33,32 @@
                   <div class="input-group">
                     <span style="margin-bottom: 2%;">#CODIGO PRODUCTO</span>
                   </div>
-    
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio venta" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Precio compra" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Tamaño (gr/mL)" style="margin-bottom: 2%;">
-                  </div>
-                  <div class="input-group form-check form-switch">
-                    <input name="chec" class="form-check-input" type="checkbox" id="chec" onChange="comprobar(this);">
-                        <label for="chec" style="margin-left: 2%;">Añadir descuento</label>
-                        <input class="form-control" name="text" id="boton" type="number" style="display:none; margin-left: 2%;" placeholder="%"/>
-                  </div>
                   
+                  <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%; border-color: rgb(211, 211, 211);">
+                    <option class="form-control"value="" selected disabled>Selecciona el proveedor...</option>
+                    <option class="form-control"value="Fiestas">Costco</option>
+                    <option class="form-control" value="Familiar">Alex Desechable</option>
+                    <option class="form-control" value="Familiar">Coca-Cola</option>
+                    <option class="form-control" value="Familiar">Sam´s</option>
+                    <option class="form-control" value="Familiar">La Josefina</option>
+                    <option class="form-control" value="Familiar">Chedraui</option>
+                  </select>    
                 </div>
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Datos de la factura:</label>
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Referencia" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 1%;">
+                    </div>
+                    <div class="input-group">
+                        <label class="form-label" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">Fecha de factura</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" class="form-control" placeholder="Fecha de factura" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Metodo de pago" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 1%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button type="button" class="btn btn-primary">Guardar cambios</button>
                 </div>
@@ -94,7 +98,7 @@
                 <div class="modal-header">
                   <h4 class="modal-title">Registrar nuevo compra</h4>    
                 </div>
-                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
+                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%; border-color: rgb(211, 211, 211);">
                     <option class="form-control"value="" selected disabled>Selecciona el proveedor...</option>
                     <option class="form-control"value="Fiestas">Costco</option>
                     <option class="form-control" value="Familiar">Alex Desechable</option>
@@ -104,17 +108,10 @@
                     <option class="form-control" value="Familiar">Chedraui</option>
                 </select>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Referencia" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
-
-                    <input type="text" class="form-control" placeholder="Reponsable" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
-                </div>
-                <div class="input-group">
                     <label class="form-label" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">Fecha de caducidad</label>
-                    <label class="form-label" style="margin-bottom: 2%; margin-left: 20%; margin-right: 2%;">Fecha de compra</label>
                 </div>
                 <div class="input-group">
                     <input type="date" class="form-control" placeholder="Fecha de caducidad" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
-                    <input type="date" class="form-control" placeholder="Fecha de compra" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -139,7 +136,20 @@
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Datos de la factura:</label>
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Referencia" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 1%;">
+                    </div>
+                    <div class="input-group">
+                        <label class="form-label" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">Fecha de factura</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" class="form-control" placeholder="Fecha de factura" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;"></input>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Metodo de pago" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 1%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button type="button" class="btn btn-primary">Registrar</button>
                 </div>
@@ -154,12 +164,11 @@
         <!------------- NAVBAR Y SIDEBAR ---------------->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">ALMACEN</a>
+            <a class="navbar-brand ps-3" href="index.html">ADMINISTRADOR</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -187,27 +196,55 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Productos</a>
+                                    <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
+                                    <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
+                                    <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
                                 </nav>
                             </div>
 
                             <div class="sb-sidenav-menu-heading">Registros</div>
-                            <a class="nav-link" href="compras_almacen.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cart-fill.svg"></div>
-                                Compras
+                            <a class="nav-link" href="usuarios_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/people-fill.svg"></div>
+                                Usuarios
                             </a>
-                            <a class="nav-link" href="productos_almacen.html">
+                            <a class="nav-link" href="proveedores_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/truck.svg"></div>
+                                Proveedores
+                            </a>
+                            <a class="nav-link" href="productos_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket-fill.svg"></div>
                                 Productos
-                            </a>        
-                            <a class="nav-link" href="mermas_almacen.html">
-                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/graph-down-arrow.svg"></div>
-                                Mermas
-                            </a>      
-                            <a class="nav-link" href="insumos_almacen.html">
+                            </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/box-seam-fill.svg"></div>
+                                Paquetes
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
+                                    <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="compras_admin2.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
-                                Insumos
-                            </a>                  
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
+                            
+
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
+                            <a class="nav-link" href="caja_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Caja
+                            </a>
+                            <a class="nav-link" href="facturas_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/clipboard-fill.svg"></div>
+                                Facturas
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

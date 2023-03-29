@@ -23,10 +23,7 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
+
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -49,8 +46,7 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Modificar receta</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modificar receta</h4> 
                 </div>
       
                 <!-- Modal body -->
@@ -59,13 +55,7 @@
                     <span style="margin-bottom: 2%;">#ID INSUMO</span>
                   </div>
     
-                  <div class="input-group">
-                    <select class="input-group" style="height: 40px; margin-bottom: 2%;">
-                        <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                        <option class="form-control"value="1">Categoria 1</option>
-                        <option class="form-control" value="2">Categoria 2</option>
-                    </select>
-                  </div>
+                  
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nombre de la receta" style="margin-bottom: 2%;">
                   </div>
@@ -101,7 +91,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">¿Seguro desea eliminar esta receta?</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal footer -->
@@ -124,15 +113,9 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Agregar nueva receta </h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Codigo de la receta" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
-                    <select class="input-group" style="height: 40px; margin-left: 2%; margin-right: 2%;">
-                        <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                        <option class="form-control"value="1">Categoria 1</option>
-                        <option class="form-control" value="2">Categoria 2</option>
-                    </select>
                 <input type="text" class="form-control" placeholder="Nombre de la receta" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
                 <div class="input-group">
@@ -175,7 +158,6 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
                                     <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
                                     <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
                                     <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
@@ -204,12 +186,18 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
                                     <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
-                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link" href="compras_admin2.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
                             <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
@@ -234,7 +222,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Recetas</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Paquetes</a></li>
+                            <li class="breadcrumb-item"><a href="p.cafeteria_admin.html">Cafeteria</a></li>
                             <li class="breadcrumb-item active">Recetas</li>
                         </ol>
                       
@@ -248,32 +236,19 @@
                                     <thead>
                                         <tr>
                                             <th>Codigo</th>
-                                            <th>Categoria</th>
                                             <th>Nombre de la receta</th>
                                             <th>Cantidad resultante</th>
-                                            <th>Producto resultante</th>
                                             <th>Departamento</th>
                                             <th>Descripción</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+
                                     <tbody>
                                         <tr>
                                             <td>pepi-pre</td>
-                                            <td>¿?</td>
                                             <td>Pepiloko (Preparado)</td>
                                             <td>1</td>
-                                            <td>PEPILOKO(PREPARADO)[C-AS01]</td>
                                             <td>Verduras y frutas</td>
                                             <td>Pepiloko preparado con 100gr de pepino<br>
                                                 75gr de zanahoria<br>
@@ -289,17 +264,14 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>pepi-pre</td>
-                                            <td>¿?</td>
-                                            <td>Pepiloko (Preparado)</td>
+                                            <td>ice-1</td>
+                                            <td>ICEE</td>
                                             <td>1</td>
-                                            <td>PEPILOKO(PREPARADO)[C-AS01]</td>
-                                            <td>Verduras y frutas</td>
-                                            <td>Pepiloko preparado con 100gr de pepino<br>
-                                                75gr de zanahoria<br>
-                                                75gr de jicama<br>
-                                                100gr de cacahuate<br>
-                                                50gr de piña enchilada<br>
+                                            <td>Bebidas</td>
+                                            <td>1 vaso de papel ICEE 32oz<br>
+                                                1 Domo para vaso ICEE 32oz<br>
+                                                1 Popote cuchara<br>
+                                                95ml de jarabe ICEE<br>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
@@ -307,17 +279,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>pepi-pre</td>
-                                            <td>¿?</td>
-                                            <td>Pepiloko (Preparado)</td>
+                                            <td>dedos-q</td>
+                                            <td>Dedos de queso</td>
                                             <td>1</td>
-                                            <td>PEPILOKO(PREPARADO)[C-AS01]</td>
-                                            <td>Verduras y frutas</td>
-                                            <td>Pepiloko preparado con 100gr de pepino<br>
-                                                75gr de zanahoria<br>
-                                                75gr de jicama<br>
-                                                100gr de cacahuate<br>
-                                                50gr de piña enchilada<br>
+                                            <td>Snacks</td>
+                                            <td>1 charola de cartón<br>
+                                                10 pz dedos de queso<br>
+                                                1/2 pliego de papel antigrasa<br>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>

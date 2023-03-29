@@ -90,13 +90,36 @@ const agregarFila4 = () => {
   const newCell = newRow.insertCell(0);
   const selectHTML = 
   '<select style="width: 100%;">'
-  +'<option value="opcion0" selected disabled>Seleccione un producto...</option>'
+  +'<option value="opcion0" selected disabled>Seleccione un insumo/producto...</option>'
   +'<option value="opcion1">Charola multiusos</option>'
+  +'<option value="opcion2">Flexsocks</option>'
+  +'<option value="opcion3">Jamon de pavo</option>'
+  +'<option value="opcion4">Leche lala deslactosada</option>'
+  +'</select>';
+  newCell.innerHTML = selectHTML;
+
+  const inputCell = newRow.insertCell(1);
+  const inputHTML = '<input type="number" style="width: 100%; type="number">';
+  inputCell.innerHTML = inputHTML;
+};
+
+const agregarFila42 = () => {
+  const table = document.getElementById('tablaprueba4');
+  const newRow = table.insertRow(-1);
+  const newCell = newRow.insertCell(0);
+  const selectHTML = 
+  '<select style="width: 100%;">'
+  +'<option value="opcion0" selected disabled>Seleccione un producto...</option>'
+  +'<option value="opcion1">Calcetas</option>'
   +'<option value="opcion2">Refresco</option>'
   +'<option value="opcion3">Jamon de pavo</option>'
   +'<option value="opcion4">Leche lala deslactosada</option>'
   +'</select>';
   newCell.innerHTML = selectHTML;
+
+  const inputCell = newRow.insertCell(1);
+  const inputHTML = '<input type="text" style="width: 100%; type="number">';
+  inputCell.innerHTML = inputHTML;
 };
 
 const eliminarFila3= () => {

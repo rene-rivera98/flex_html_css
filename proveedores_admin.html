@@ -50,7 +50,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Modificar proveedor</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
@@ -60,15 +59,40 @@
                   </div>
     
                   <div class="input-group">
+                    <input type="text" class="form-control" placeholder="RFC" style="margin-bottom: 2%;">
+                  </div>
+
+                  <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%;">
                   </div>
+                  
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="RFC" style="margin-bottom: 2%;">
+                    <input type="number" class="form-control" placeholder="Código Postal" style="margin-bottom: 2%;">
+                  </div>
+
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Regimen Fiscal" style="margin-bottom: 2%;">
+                  </div>
+
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Correo electronico" style="margin-bottom: 2%;">
                   </div>
                   
+                  <div class="input-group">
+                    <input type="number" class="form-control" placeholder="Teléfono" style="margin-bottom: 2%;">
+                  </div>
                 </div>
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Datos bancarios:</label>
+
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Banco" style="margin-bottom: 2%;">
+                      </div>
+    
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cuenta bancaria/Clave" style="margin-bottom: 2%;">
+                      </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button type="button" class="btn btn-primary">Guardar cambios</button>
                 </div>
@@ -86,7 +110,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">¿Seguro desea eliminar este proveedor?</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal footer -->
@@ -109,20 +132,36 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Registrar nuevo proveedor</h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="RFC" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
 
-                    <input type="text" class="form-control" placeholder="RFC" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                    <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
                 </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Código Postal" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+
+                    <input type="text" class="form-control" placeholder="Regimen Fiscal" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Correo electronico" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
+
+                    <input type="number" class="form-control" placeholder="Teléfono" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;  margin-top: 2%;">
+                </div>
+                
                 <!-- Modal body -->
                 <div class="modal-body">
                     <!-- TABLA -->
                 </div>
                     <!-- FIN TABLA -->
                 <!-- Modal footer -->
+                <label style="margin-left: 2%;">Datos bancarios:</label>
                 <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nombre de Banco" style="margin-bottom: 2%;  margin-top: 2%;">
+    
+                        <input type="number" class="form-control" placeholder="Cuenta Bancaria/Clave interbancaria" style="margin-bottom: 2%; margin-top: 2%; margin-left: 4%;">
+                    </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   <button type="button" class="btn btn-primary">Registrar</button>
                 </div>
@@ -145,7 +184,6 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
                                     <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
                                     <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
                                     <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
@@ -174,12 +212,18 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
                                     <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
-                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link" href="compras_admin2.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
                             <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
@@ -202,9 +246,9 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla: Proveedores Registrados</h1>
+                        <h1 class="mt-4">Proveedores</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Registro</a></li>
                             <li class="breadcrumb-item active">Proveedores</li>
                         </ol>
                       
@@ -218,26 +262,29 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nombre</th>
                                             <th>RFC</th>
+                                            <th>Nombre</th>
+                                            <th>C.P.</th>
+                                            <th>Regimen fiscal</th>
+                                            <th>Correo</th>
+                                            <th>Teléfono</th>
+                                            <th>Banco</th>
+                                            <th>Cuenta/Clave</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+
                                     <tbody>
                                         <tr>
                                             <td>55</td>
-                                            <td>Costco</td>
                                             <td>CME910715UB9</td>
+                                            <td>Costco</td>
+                                            <td>91209</td>
+                                            <td>Personas Morales con Fine Lucrativos</td>
+                                            <td>costco.proveedor@costco.com</td>
+                                            <td>55-02-22-12-12</td>
+                                            <td>Banorte</td>
+                                            <td>415261526152617</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                                     <img src="/node_modules/bootstrap-icons/icons/pencil-square.svg">
@@ -247,17 +294,14 @@
                                         </tr>
                                         <tr>
                                             <td>56</td>
-                                            <td>Ricolino</td>
                                             <td>PRI190815SU0</td>
-                                            <td>
-                                                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>57</td>
-                                            <td>Sabritas</td>
-                                            <td>SAB730510K44</td>
+                                            <td>Ricolino</td>
+                                            <td>91212</td>
+                                            <td>Personas Morales con Fine Lucrativos</td>
+                                            <td>ricolino.proveedor@ricolino.com</td>
+                                            <td>52-12-32-12-32</td>
+                                            <td>BBVA</td>
+                                            <td>318271628192102</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModalE"><img src="/node_modules/bootstrap-icons/icons/trash3-fill.svg"></a>

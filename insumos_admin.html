@@ -23,10 +23,7 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
+
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -50,7 +47,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Modificar insumo</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal body -->
@@ -91,7 +87,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">¿Seguro desea eliminar este insumo?</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal footer -->
@@ -114,7 +109,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Agregar nuevo insumo</h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nombre" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%; margin-top: 2%;">
@@ -157,7 +151,6 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
                                     <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
                                     <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
                                     <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
@@ -186,12 +179,18 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
                                     <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
-                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link" href="compras_admin2.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
                             <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja

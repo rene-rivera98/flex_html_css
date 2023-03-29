@@ -23,10 +23,7 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
+
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -50,13 +47,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">Modificar paquete de cafeteria</h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%; border-color: rgb(204, 204, 204);">
-                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                    <option class="form-control"value="x">1</option>
-                    <option class="form-control" value="x">2</option>
-                </select>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Nombre del paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
 
@@ -107,7 +98,6 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title">¿Seguro desea eliminar este paquete?</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
       
                 <!-- Modal footer -->
@@ -129,14 +119,8 @@
       
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title">Crear paquete</h4>    
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Crear paquete</h4>   
                 </div>
-                <select class="input-group" style="height: 25pt; margin-bottom: 2%; margin-left: 2%; margin-right: 2%; width: 96%; margin-top: 2%;">
-                    <option class="form-control"value="" selected disabled>Selecciona una categoria...</option>
-                    <option class="form-control"value="Fiestas">¿?</option>
-                    <option class="form-control" value="Familiar">¿?</option>
-                </select>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="ID paquete" style="margin-bottom: 2%; margin-left: 2%; margin-right: 2%;">
 
@@ -148,14 +132,14 @@
                 <!-- Modal body -->
                 
                 <div class="modal-body">
-                    <label style="margin-left: 2%;">Receta:</label>
                     <!-- TABLA -->
                         <div class="container">
                             <div class="row">
                                 <table border="1" class="table" id="tablaprueba4">
                                 <thead class="thead-dark">
                                     <tr>
-                                    <th>Productos</th>
+                                    <th>Receta  
+                                    </th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -197,7 +181,6 @@
                             </a>
                             <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="compras_admin.html" style="font-size: 120%;">Compras</a>
                                     <a class="nav-link" href="insumos_admin.html" style="font-size: 120%;">Insumos</a>
                                     <a class="nav-link" href="mermas_admin.html" style="font-size: 120%;">Mermas</a>
                                     <a class="nav-link" href="ventas_admin.html" style="font-size: 120%;">Ventas</a>
@@ -226,12 +209,18 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="p.cafeteria_admin.html" style="font-size: 120%;">Cafeteria</a>
                                     <a class="nav-link" href="p.frontdesk_admin.html" style="font-size: 120%;">FrontDesk</a>
-                                    <a class="nav-link" href="recetas_admin.html" style="font-size: 120%;">Recetas</a>
                                 </nav>
                             </div>
-                            
+                            <a class="nav-link" href="compras_admin2.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/basket3-fill.svg"></div>
+                                Compras
+                            </a>
+                            <a class="nav-link" href="gastos_admin.html">
+                                <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
+                                Gastos
+                            </a>
 
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Transacciones</div>
                             <a class="nav-link" href="caja_admin.html">
                                 <div class="sb-nav-link-icon"><img src="/node_modules/bootstrap-icons/icons/cash-coin.svg"></div>
                                 Caja
@@ -259,11 +248,23 @@
                             <li class="breadcrumb-item"><a href="index.html">Paquetes</a></li>
                             <li class="breadcrumb-item active">Cafeteria</li>
                         </ol>
-                      
+                      <style>
+                        a:link {
+                            text-decoration: none;
+                            color: black;
+                            }
+                            a:visited {
+                            text-decoration: none;
+                            color: black
+                            }
+                            
+                      </style>
                         <!-- TABLA -->
                         <div class="card mb-4">
                             <div class="card-header">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalA">Crear <img src="/node_modules/bootstrap-icons/icons/plus-square-fill.svg"></button>
+                                <!-- <button type="button" class="btn btn-primary"><a href="recetas_admin.html">Recetas </a> <img src="/node_modules/bootstrap-icons/icons/layout-text-sidebar-reverse.svg"></button> -->
+
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -271,26 +272,15 @@
                                         <tr>
                                             <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>Categoria</th>
                                             <th>Precio venta</th>
                                             <th>Acción</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+
                                     <tbody>
                                         <tr>
                                             <td>Bur1</td>
                                             <td>Hamburguesa</td>
-                                            <td>¿?</td>
                                             <td>85.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -302,7 +292,6 @@
                                         <tr>
                                             <td>Bon1</td>
                                             <td>Boneless</td>
-                                            <td>¿?</td>
                                             <td>100.00</td>
                                             <td>
                                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><img src="/node_modules/bootstrap-icons/icons/pencil-square.svg"></a>
